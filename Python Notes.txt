@@ -1,0 +1,202 @@
+============================================ DAY 1 =============================================================================
+
+-> Programming language : which has decision making power (DMP) --> ctrl structure --> (if else loop or while loop, etc).
+
+-> library : collection of predefined functions or objects or classes.
+
+-> framework : it provides some rule and design pattern.
+   Design patterns : MVC, MVT, MVVC
+
+-> functions : 1. outside classes
+	           2. syntax : fun_name()
+
+-> methods : 1. inside classes
+             2. syntax : something.method_name()
+
+-> why python : 1. Larger community
+		2. more libraries
+		3. multi domain (it can be used in web dev, ML, AI, etc)
+
+-> programming languages has 3 structures :
+	1. functional : c lang
+	2. oop : java, c#
+	3. hybrid : python, js
+
+-> There are 3 data types:
+	1. static : int num = 10; --> java, c ++
+	2. dynamic : num = 10 or num = 'Fynd' --> python, js
+	3. hybrid : groovy lang
+
+-> Dynamic lang are slower than static lang
+
+-> How code executes in python :
+	1. PVM stands for python virtual machine which contains compiler and interpreter
+	2. source code goes to compiler then compiler convert it to machine code (.class file) which contains byte code
+	3. Further Byte code goes to interpreter and interpreter executes it line by line.
+
+-> Flavours of python ( different kind of compilers in python) :
+	1. PYPY --> python ( faster among all compiler)
+	2. Iron Python --> dotnet
+	3. CPython --> c lang (default compiler of python)
+	4. JPython --> java lang 
+
+=============================================== DAY 2 ==========================================================================
+
+-> Memory Management :
+
+	1. shell : int --> -5 to 256 (small integer caching concept) --> same address will be allocated
+		   float --> differ on delimeters 
+		   string --> same address will be allocated
+	
+	2. IDE or editor (demo.py) : int --> same
+								 float --> same
+								 string --> same
+
+
+-> strings : strings.py
+
+
+Questions :
+
+1. 
+x = 1000
+y = 2000
+
+print(id(x))
+print(id(y))
+
+x = 999
+print(id(x)) 
+print(id(y))
+
+what happens to x = 1000 after we assign x = 999 ?
+
+
+2. 
+
+x = 1000
+x = 2000
+
+print(id(x))
+print(id(y))
+
+if we create two same variable in python why it is working and not giving error ? 
+
+
+3.
+
+str1 = "Fynd"
+
+print(id(str1))
+print(id(str1[0]))
+
+why str1 and str1[0] base address is not same ?
+
+
+===================================================== DAY 3 =====================================================================
+
+Solution of above 3 Questions :
+
+1. 
+x = 1000
+y = 2000
+
+print(id(x))
+print(id(y))
+
+x = 999
+print(id(x)) 
+print(id(y))
+
+what happens to x = 1000 after we assign x = 999 ?
+
+Ans :
+-> when we assign x = 1000 it creates object of int class for value 1000 and store it in heap memory and the address of 1000 is stored in x.
+-> variable x and address of 1000 is stored in global memory in form of key value pair in dictionary.
+-> when again we assign x = 999 then it creates another object of int class for value 999 and store it in heap memory.
+-> now as we know in dictionary we cannot create same key thats why address of 1000 value will overwrite and x will hold the address of 999 and x will start pointing to address of 999.
+-> reference collector will remove the connection between x and address of 1000 further address of 1000 value will be discarded.
+-> now 1000 value is without address so garbage collector will remove the 1000 value from heap memory.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+2. 
+
+x = 1000
+x = 2000
+
+print(id(x))
+print(id(y))
+
+if we create two same variable in python why it is working and not giving error ? 
+
+Ans:
+
+-> when we assign x = 1000 it creates object of int class for value 1000 and store it in heap memory and the address of 1000 is stored in x.
+-> variable x and address of 1000 is stored in global memory in form of key value pair in dictionary.
+-> when again we assign x = 2000 then it creates another object of int class for value 2000 and store it in heap memory.
+-> now as we know in dictionary we cannot create same key thats why address of 1000 value will discarded and x will hold the address of 2000 and x will start pointing to address of 2000 that's why in python does not give error above problem statement.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+3.
+
+str1 = "Fynd"
+
+print(id(str1))
+print(id(str1[0]))
+
+why str1 and str1[0] base address is not same ?
+
+Ans :
+
+-> When we assign str1 = "Fynd" it creates object of string class and store it at some memory address in which all substring addresses are stored w.r.t. indexes.
+-> All substring addresses points to substrings which are stored in heap memory. This is reason when we check address of str1 and str1[0] we get different memory addresses.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+# Array indexing concept :
+
+-> In array, indexing works on base address + offset(displacement) and not on logical indexing that we see in programming i.e. 0,1,2,...
+# Base Address : the address at which object is stored.
+# offset (displacement) : the integer value indicating distance between the beginning of object and the given element or point.
+
+for e.g. :
+
+arr = [10,34,45,6]  
+
+suppose, address of 10 is AD1234
+
+then the address of 34 will be AD1234 (base address) + 4 (offset) => AD1238
+address of 34 is AD1238
+
+This is how internally array indexing works.
+ 
+========================================================== DAY 4 ===========================================================================
+
+List --> List.py
+
+Tuple --> Tuple.py
+
+========================================================== DAY 5 ===========================================================================
+
+Dict_29_05_23.py
+
+Set_29_05_23.py
+
+========================================================= DAY 6 ============================================================================
+
+Control_Structure_30_05-23.py
+
+========================================================= DAY 7 ============================================================================
+
+Functions_31_05_23.py
+
+========================================================= DAY 8 to 18 ============================================================================
+
+OOP_08_to_18.py
+
+========================================================= DAY 19 ===========================================================================
+
+Exception_Handling_15_06_23.py
+
