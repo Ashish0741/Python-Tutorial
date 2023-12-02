@@ -1,0 +1,2 @@
+This is another method of writing in file
+Please check
